@@ -1,13 +1,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Lap } from '../types';
+import { Lap } from '../types.ts';
 
 const Stopwatch: React.FC = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [laps, setLaps] = useState<Lap[]>([]);
-  // Fix: Added initial value to useRef to resolve "Expected 1 arguments, but got 0" error.
-  // Using undefined for the animation frame handle and 0 for the start time.
   const requestRef = useRef<number | undefined>(undefined);
   const startTimeRef = useRef<number>(0);
 
@@ -61,7 +59,6 @@ const Stopwatch: React.FC = () => {
   return (
     <div className="flex flex-col items-center space-y-12">
       <div className="relative w-full aspect-square max-w-[320px] rounded-full border border-white/10 flex flex-col items-center justify-center bg-black/40 overflow-hidden">
-        {/* Visual Progress Ring (Static or dynamic could go here) */}
         <div className="absolute inset-0 rounded-full border-2 border-white/5" />
         
         <div className="z-10 text-center">
@@ -72,7 +69,6 @@ const Stopwatch: React.FC = () => {
           <div className="text-[10px] uppercase tracking-[0.4em] opacity-40 mt-2">Stopwatch</div>
         </div>
 
-        {/* Dynamic sweeping line */}
         <div 
           className="absolute w-0.5 h-[48%] bg-white/50 origin-bottom transition-transform duration-75"
           style={{ 

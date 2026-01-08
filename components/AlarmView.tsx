@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Alarm } from '../types';
+import { Alarm } from '../types.ts';
 
 const AlarmView: React.FC = () => {
   const [alarms, setAlarms] = useState<Alarm[]>([

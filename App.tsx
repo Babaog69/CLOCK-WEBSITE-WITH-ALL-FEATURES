@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { Tab } from './types';
-import WorldClock from './components/WorldClock';
-import AlarmView from './components/AlarmView';
-import Stopwatch from './components/Stopwatch';
-import Timer from './components/Timer';
-import ClockNav from './components/ClockNav';
+import { Tab } from './types.ts';
+import WorldClock from './components/WorldClock.tsx';
+import AlarmView from './components/AlarmView.tsx';
+import Stopwatch from './components/Stopwatch.tsx';
+import Timer from './components/Timer.tsx';
+import ClockNav from './components/ClockNav.tsx';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('world');
